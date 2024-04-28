@@ -243,8 +243,8 @@ struct Date* validate_date(const char* date_str){
     if (day > days_in_month)
         return NULL;
 
-    // Проверка периода 1-13 февраля для России после 1918 года
-    if (year > 1918 && month == 2 && day >= 1 && day <= 13)
+    // Проверка периода 1-13 февраля для России в 1918 году
+    if (year == 1918 && month == 2 && day >= 1 && day <= 13)
         return NULL;
     date->day = day;
     date->month = month;
